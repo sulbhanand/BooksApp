@@ -1,1 +1,18 @@
 <p>book-list works!</p>
+
+<table>
+    <tr>
+      <th>Book Title</th>
+      <th>Book Description</th>
+      <th>Author</th>
+      <th>Image</th>
+    </tr>
+    <tr *ngFor="let cust of items">
+      <td>{{cust.bookTitle}}</td>
+      <td>{{cust.bookDescription}}</td>
+      <td>{{cust.author}}</td>
+      <td><img src="{{cust.coverBase64}}" width="100" height="100" /></td>
+    </tr>
+  </table>
+
+  <button (click)="addMoreData()">Add More Data</button>

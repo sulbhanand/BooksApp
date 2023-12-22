@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class BookServiceService {
   url: string = "https://localhost:7202/api/Books/GetBooks";
+  //url : string = "https://reqres.in/api/LIST";
   constructor(private http:HttpClient) { }
 
   getData(page: number): Observable<any[]> {
@@ -14,4 +15,8 @@ export class BookServiceService {
     //const url = `${this.url}?pageNumber=${page}`;
     return this.http.get<any[]>(this.url+'/'+page);
   }
+
+  // getData() : Observable<any[]>{
+  //   return this.http.get<any[]>(this.url);
+  // }
 }
